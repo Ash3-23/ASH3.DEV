@@ -1,0 +1,98 @@
+/* MainPage.css */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden; /* Para evitar el scroll */
+}
+
+.main-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  box-sizing: border-box;
+  background-color: #1E5F50;
+}
+.content__title{
+  padding: 10px;
+  border-radius: 10px;
+  background-color: rgba(0, 255, 179, 0.535);
+}
+
+.border-box__section {
+  height: calc(100vh - 50px); 
+  width: calc(100vw - 90px);
+  border: 3px solid rgb(255, 255, 255);
+  border-radius: 1rem;
+  box-sizing: border-box;
+  margin: 20px;
+  position: relative;
+}
+
+.navbar-section {
+  height: 50px; /* Altura de ejemplo para la barra de navegación */
+  background-color: #f0f0f0; /* Color de fondo de ejemplo */
+  border-radius: 0.4rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.principal-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  margin: 10px 0 0 30px;  
+}
+
+.first-content__section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+
+}
+
+.action-content__section {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 90%;
+  padding: 10px 0;
+  border-radius: 1rem;
+  background-color: rgba(255, 255, 255, 0.8); /* Fondo semitransparente para resaltar los botones */
+  position: absolute;
+  bottom: 20px;
+}
+
+.action-content__section button {
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #1E5F50;
+  color: white;
+  border: 2px solid white;
+  border-radius: 5px;
+  margin: 5px;
+  flex: 1;
+  max-width: 150px; /* Ancho máximo para los botones */
+}
+
+.action-content__section button:hover {
+  background-color: white;
+  color: #1E5F50;
+}
+
+.footer-section {
+  height: 50px; /* Altura de ejemplo para el pie de página */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
