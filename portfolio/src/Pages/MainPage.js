@@ -35,23 +35,27 @@ const MainPage = () => {
     }
   };
 
+  const getClassNames = () => {
+    let classNames = 'principal-section';
+    if (section === 0 || section === 1) {
+      classNames += ' principal-section--bordered';
+    }
+    return classNames;
+  };
+
   const handleSectionChange = (index) => {
     setSection(index);
   };
   return (
     <div className='main-page'>
       <div className='border-box__section'>
-        <div className="navbar-section">
-          <nav className='navbar__actions'>
-            contact
-          </nav>
-        </div>
-        <div className="principal-section">
+        <div className={getClassNames()}>
           <div className='first-content__section'>
             {(section === 0 || section === 1) ? (
               <>
-                <h2 className='content__title'>Nerea Trébol Crespo</h2>
+                <h1 className='content__name-title'>Nerea Trébol Crespo</h1>
                 <h4 className='content__subtitle'>{pages[section]}</h4>
+                <h3 className='content__job-title'>Full Stack Developer</h3>
               </>
             ) : (
               <h1 className='content__title'>{pages[section]}</h1>
