@@ -64,3 +64,9 @@ border: 1px solid white;
     background-color: #0B161B; /* Color de fondo para verificar visibilidad */
   }
 }
+
+.mookupIphone{
+  position: absolute;
+  right: 0;
+  width: 40%;
+}

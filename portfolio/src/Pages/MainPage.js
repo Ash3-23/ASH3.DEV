@@ -3,35 +3,36 @@ import React, { useState } from 'react';
 import './MainPage.css';
 import AboutMe from '../components/AboutMe/AboutMe';
 import Skills from '../components/Skills/Skills';
-import OwlNight from '../components/OwlNight/OwlNight';
-import DulceConMaria from '../components/DulceConMaria/DulceConMaria';
-import SalaVirtual from '../components/SalaVirtual/SalaVirtual';
+import Contact from '../components/Contact/Contact';
+import Proyects from '../components/Proyects/Proyects';
+import n_t from '../assets/images/n_t.png';
+import HomePage from '../components/HomePage/HomePage';
 
 const MainPage = () => {
   const [section, setSection] = useState(0);
 
   const pages = [
-    'About Me',
-    'Skills',
-    'OwlNight',
-    'Sala Virtual',
-    'Dulce con Maria'
+    'about Me',
+    'skills',
+    'owlNight',
+    'sala virtual',
+    'dulce con maria'
   ];
 
   const renderSection = () => {
     switch (section) {
       case 0:
-        return <AboutMe />;
+        return <HomePage />;
       case 1:
-        return <Skills />;
-      case 2:
-        return <OwlNight />;
-      case 3:
-        return <SalaVirtual />;
-      case 4:
-        return <DulceConMaria />;
-      default:
         return <AboutMe />;
+      case 2:
+        return <Skills />;
+      case 3:
+        return <Proyects />;
+      case 4:
+        return <Contact />;
+      default:
+        return <HomePage />;
     }
   };
 
@@ -48,31 +49,42 @@ const MainPage = () => {
   };
   return (
     <div className='main-page'>
-      <div className='border-box__section'>
-        <div className={getClassNames()}>
-          <div className='first-content__section'>
-            {(section === 0 || section === 1) ? (
-              <>
-                <h1 className='content__name-title'>Nerea Trébol Crespo</h1>
-                <h4 className='content__subtitle'>{pages[section]}</h4>
-                <h3 className='content__job-title'>Full Stack Developer</h3>
-              </>
-            ) : (
-              <h1 className='content__title'>{pages[section]}</h1>
-            )}
-            {renderSection()}
-          </div>
+
+      {/* CABECERA PÁGINA */}
+      <header className='header__section'>
+        <div className='header__logo'>
+          <img className='n_t--logo' alt='logo' src={n_t}></img>
         </div>
-        <div className="footer-section">
-          <div className='action-content__section'>
-            <button className='action__about-me' onClick={() => handleSectionChange(0)}>About Me</button>
-            <button className='action__skills' onClick={() => handleSectionChange(1)}>Skills</button>
-            <button className='action__owlnight' onClick={() => handleSectionChange(2)}>OwlNight</button>
-            <button className='action__sala-virtual' onClick={() => handleSectionChange(3)}>Sala Virtual</button>
-            <button className='action__dulce-con-maria' onClick={() => handleSectionChange(4)}>Dulce con Maria</button>
-          </div>
+        <div className='header__contact'>
+          <h4 className='contact__h4'>//FULL STACK developer</h4>
+          <h4 className='contact__h4'> - </h4>
+          <h4 className='contact__h4'>(nerea.trebol@gmail.com)</h4>
         </div>
+        <div className='header__info'>
+          <h4 className='info__h4'>Madrid Based</h4>
+        </div>
+      </header>
+
+      {/* RENDERIZADO DE EL CONTENIDO PRINCIPAL */}
+      <div className='content__section'>
+        {renderSection()}
       </div>
+      {/* BARRA DE NAVEGACIÓN */}
+      <nav className='nav__section'>
+        <a className='nav__text' href="#about" onClick={() => handleSectionChange(1)}>
+          <span>about</span>
+        </a>
+        <a className='nav__text' href="#skills" onClick={() => handleSectionChange(2)}>
+          <span>skills</span>
+        </a>
+        <a className='nav__text' href="#projects" onClick={() => handleSectionChange(3)}>
+          <span>projects</span>
+        </a>
+        <a className='nav__text' href="#contact" onClick={() => handleSectionChange(4)}>
+          <span>contact</span>
+        </a>
+      </nav>
+
     </div>
   );
 };

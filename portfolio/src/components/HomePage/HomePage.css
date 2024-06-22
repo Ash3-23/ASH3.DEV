@@ -1,0 +1,165 @@
+/* Estilos generales */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background-color: #000000;
+  color: #fff;
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+/* Estilo para el contenedor principal de HomePage */
+.home-box__section {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto auto;
+  align-items: center;
+  justify-items: center;
+  height: auto;
+  box-sizing: border-box;
+  text-align: center;
+  transition: all 0.5s ease-in-out;
+  position: relative;
+}
+
+
+.home__image {
+  grid-row: 1 / span 3;
+  /* Hace que la imagen ocupe todas las filas */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.see-more__button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+  grid-row: 3;
+  /* padding: 10px 20px; */
+  font-size: 1em;
+  color: white;
+  background-color: transparent;
+  border: none;
+  z-index: 10;
+}
+
+.see-more__text {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 500;
+  font-style: normal;
+  letter-spacing: 0.1rem;
+}
+
+.see-more__arrow {
+  width: 40px;
+  text-align: middle;
+}
+
+.see-more__button:hover {
+  color: #439582;
+}
+
+
+
+/* Estilos para OwlNight */
+
+.style-owl-night .home__heading {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 700;
+  font-style: normal;
+  grid-row: 1;
+  font-size: clamp(12px, 4vw, 74px);
+  /* Responsive font-size */
+  /* background: linear-gradient(to right, #63b6a2, #4e9181, #327767, #227d68);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent; */
+  z-index: 2;
+  position: absolute;
+  right: 75%;
+  top: 188px;
+}
+
+.style-owl-night .home__image {
+  width: 90%;
+}
+
+.style-owl-night .extra__image {
+  position: absolute;
+  right: 65px;
+  top: 15px;
+  width: 34%;
+  z-index: 5;
+}
+
+.style-owl-night .see-more__button {
+  position: relative;
+  bottom: 220px;
+  left: 55px;
+}
+
+
+
+
+/* Estilos para Sala Virtual */
+.style-sala-virtual {
+  display: initial;
+}
+
+.style-sala-virtual .home__heading {
+  background: linear-gradient(to right, #FF5722, #E64A19, #D84315, #BF360C);
+}
+
+.style-sala-virtual .home__image {
+  width: 20%;
+}
+
+
+
+
+
+
+
+
+/* Estilos para Dulce con Maria */
+.style-dulce-con-maria {
+  background-color: #3E3E3E;
+}
+
+.style-dulce-con-maria .home__heading {
+  background: linear-gradient(to right, #FFEB3B, #FBC02D, #F9A825, #F57F17);
+}
+
+
+@media (max-width: 1058px) {
+  .style-owl-night .home__heading {
+    left: 15px;
+  }
+}
+
+@media (max-width: 989px) {
+  .home-box__section {
+    display: flex;
+    margin-top: 10%;
+    flex-direction: column;
+    height: -webkit-fill-available;
+  }
+
+  .style-owl-night .home__heading {
+    position: initial;
+  }
+}
